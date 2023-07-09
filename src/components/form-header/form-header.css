@@ -1,0 +1,19 @@
+.form-header {
+  background: url("../../utils/images/bg-sidebar-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 25%;
+  border-radius: 10px;
+  padding: 0 0 0 2rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .form-header {
+    width: 100%;
+    display: flex;
+    border-radius: 0;
+  }
+}
+
+/*# sourceMappingURL=form-header.css.map */

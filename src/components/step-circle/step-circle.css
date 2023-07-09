@@ -1,0 +1,13 @@
+.step-circle {
+  border-radius: 50%;
+  border: 1px solid white;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 0 1rem 0 0;
+}
+
+/*# sourceMappingURL=step-circle.css.map */

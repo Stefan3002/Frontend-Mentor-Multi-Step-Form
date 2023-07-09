@@ -1,0 +1,27 @@
+.step {
+  margin: 1rem 0;
+  text-align: left;
+  line-height: 5px;
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+}
+.step .step-name {
+  color: white;
+  text-transform: uppercase;
+}
+.step .step-number {
+  color: #a6a3fd;
+  text-transform: uppercase;
+}
+.step:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1100px) {
+  .step-info {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=step.css.map */

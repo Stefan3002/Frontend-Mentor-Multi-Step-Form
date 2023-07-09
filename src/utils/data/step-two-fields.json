@@ -1,0 +1,8 @@
+{
+  "fields":[
+    "Arcade", "Advanced", "Pro"
+  ],
+  "prices": [
+    9, 12, 15
+  ]
+}

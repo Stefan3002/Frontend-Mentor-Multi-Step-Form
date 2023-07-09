@@ -1,0 +1,13 @@
+.form-body {
+  width: 75%;
+  padding: 1rem 0;
+}
+
+@media screen and (max-width: 1100px) {
+  .form-body {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/*# sourceMappingURL=form-body.css.map */

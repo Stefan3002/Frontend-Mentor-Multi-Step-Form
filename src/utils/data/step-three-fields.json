@@ -1,0 +1,11 @@
+{
+  "fields": [
+    "Online service", "Larger storage", "Customizable Profile"
+  ],
+  "prices": [
+    1, 2, 2
+  ],
+  "descriptions": [
+    "Access to multiplayer games", "Extra 1 TB of cloud storage", "Custom theme on your profile"
+  ]
+}

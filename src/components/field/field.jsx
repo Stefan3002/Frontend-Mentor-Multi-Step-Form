@@ -4,10 +4,14 @@ import Icon from "../icon/icon";
 import icon1 from '../../utils/images/icon-arcade.svg'
 import icon2 from '../../utils/images/icon-advanced.svg'
 import icon3 from '../../utils/images/icon-pro.svg'
-const Field = ({fieldInfo, type, price, idx}) => {
+import {useSelector} from "react-redux";
+import {getPlansInfo} from "../../utils/store/utils-reducer/utils-selectors";
+const Field = ({fieldInfo, type, price, idx, description, callback}) => {
+    const selectedPlan = useSelector(getPlansInfo)
+    const {plan} = selectedPlan
     if(type === 'card')
         return (
-            <div className='field field-card'>
+            <div style={{background: plan === idx ? '#d6d6e1' : null}} onClick={() => callback(idx)} className='field field-card'>
                 <Icon img={idx === 0 ? icon1 : idx === 1 ? icon2 : icon3} />
                 <div className="plan-info">
                     <p className='plan-name'>{fieldInfo}</p>
@@ -15,11 +19,24 @@ const Field = ({fieldInfo, type, price, idx}) => {
                 </div>
             </div>
         )
+    else if(type === 'long')
+        return (
+            <div className='field field-long'>
+                <div className="field-long-left">
+                    <InputField type='check' />
+                    <div className="field-left-info">
+                        <p>{fieldInfo}</p>
+                        <p className='sub-info'>{description}</p>
+                    </div>
+                </div>
+                <p className='price'>+${price}/mo</p>
+            </div>
+        )
     else
         return (
             <div className='field'>
                 <p>{fieldInfo}</p>
-                <InputField />
+                <InputField idx={idx} callback={callback} />
             </div>
         )
 }

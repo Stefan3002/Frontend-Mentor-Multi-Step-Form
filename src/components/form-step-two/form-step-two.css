@@ -1,8 +1,12 @@
 .form-step-two .form-icons {
   display: flex;
-  gap: 1rem;
   align-items: stretch;
-  justify-content: stretch;
+  justify-content: space-between;
+}
+.form-step-two .button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*# sourceMappingURL=form-step-two.css.map */

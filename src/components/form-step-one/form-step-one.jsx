@@ -4,15 +4,46 @@ import fieldsInfo from '../../utils/data/step-one-fields.json'
 import Field from "../field/field";
 import Button from "../button/button";
 import {useDispatch, useSelector} from "react-redux";
-import {setStep} from "../../utils/store/utils-reducer/utils-actions";
-import {getStep} from "../../utils/store/utils-reducer/utils-selectors";
+import {setPersonalInfo, setStep} from "../../utils/store/utils-reducer/utils-actions";
+import {getPersonalInfo, getStep} from "../../utils/store/utils-reducer/utils-selectors";
 import FormBodyHeader from "../form-body-header/form-body-header";
 const FormStepOne = () => {
     const {fields} = fieldsInfo
+    const personalInfo = useSelector(getPersonalInfo)
     const dispatch = useDispatch()
     const step = useSelector(getStep)
     const nextFormStep = () => {
         dispatch(setStep(step + 1))
+    }
+
+    const setPersonalInfoCB = (event, idx) => {
+        const target = event.target.value
+        let newPersonalInfo
+
+        switch (idx){
+            case 0:
+                newPersonalInfo = {
+                    ...personalInfo,
+                    name: target
+                }
+                break
+            case 1:
+                newPersonalInfo = {
+                    ...personalInfo,
+                    email: target
+                }
+                break
+            case 2:
+                newPersonalInfo = {
+                    ...personalInfo,
+                    phone: target
+                }
+                break
+            default:
+                newPersonalInfo = personalInfo
+        }
+
+        dispatch(setPersonalInfo(newPersonalInfo))
     }
 
     return (
@@ -20,8 +51,8 @@ const FormStepOne = () => {
             <div className="form-info">
                 <FormBodyHeader title='Personal Info' subtitle='Please provide your name, email address, and phone number.' />
                 {
-                    fields.map(field => {
-                        return <Field fieldInfo={field} />
+                    fields.map((field, idx) => {
+                        return <Field idx={idx} callback={setPersonalInfoCB} fieldInfo={field} />
                     })
                 }
             </div>

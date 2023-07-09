@@ -8,4 +8,8 @@
   justify-content: space-between;
 }
 
+.back-button {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=form-step.css.map */

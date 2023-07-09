@@ -27,4 +27,37 @@
   font-weight: bold;
 }
 
+.sub-info {
+  color: #939496;
+}
+
+.field-long {
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 1rem 2rem 1rem 1rem;
+  border-radius: 10px;
+}
+.field-long:hover, .field-long:focus {
+  background: #f6f7fc;
+  transition: all 0.2s;
+}
+
+.field-long-left {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.field-left-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 25px;
+}
+.field-left-info p {
+  margin: 0;
+}
+
 /*# sourceMappingURL=field.css.map */

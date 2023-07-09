@@ -4,3 +4,17 @@ export const setStep = (step) => {
         payload: step
     }
 }
+
+export const setPersonalInfo = (info) => {
+    return {
+        type: 'SET_PERSONAL_INFO',
+        payload: info
+    }
+}
+
+export const setPlansInfo = (info) => {
+    return {
+        type: 'SET_PLANS_INFO',
+        payload: info
+    }
+}

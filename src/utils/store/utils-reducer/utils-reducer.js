@@ -11,7 +11,11 @@ const INITIAL_STATE = {
     addonsInfo: {
         addons: []
     },
-    totalPrice : 0
+    totalPrice : 0,
+    errors: {
+        step: undefined,
+        fields: []
+    }
 }
 
 export const utilsReducer = (state = INITIAL_STATE, action) => {
@@ -41,6 +45,11 @@ export const utilsReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 totalPrice: payload
+            }
+        case 'SET_ERRORS':
+            return {
+                ...state,
+                errors: payload
             }
         default:
             return {

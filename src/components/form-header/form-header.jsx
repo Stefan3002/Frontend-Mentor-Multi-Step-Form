@@ -7,9 +7,9 @@ import useValidate from "../../hooks/validateStepOne";
 const FormHeader = () => {
     const {steps} = stepsData
     const dispatch = useDispatch()
-    const [ans] = useValidate()
+    const [validate] = useValidate()
     const changeStep = (index) => {
-        if(!ans)
+        if(!validate())
             return
         dispatch(setStep(index - 1))
     }

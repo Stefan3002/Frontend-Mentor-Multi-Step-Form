@@ -5,10 +5,12 @@ import icon1 from '../../utils/images/icon-arcade.svg'
 import icon2 from '../../utils/images/icon-advanced.svg'
 import icon3 from '../../utils/images/icon-pro.svg'
 import {useSelector} from "react-redux";
-import {getAddonsInfo, getPlansInfo} from "../../utils/store/utils-reducer/utils-selectors";
-const Field = ({fieldInfo, type, price, idx, description, callback}) => {
+import {getAddonsInfo, getErrors, getPlansInfo} from "../../utils/store/utils-reducer/utils-selectors";
+const Field = ({fieldInfo, type, price, idx, description, callback, currentStep}) => {
     const selectedPlan = useSelector(getPlansInfo)
     const selectedAddons = useSelector(getAddonsInfo)
+    const errors = useSelector(getErrors)
+    const {step, fields} = errors
     const {plan} = selectedPlan
     if(type === 'card')
         return (
@@ -36,8 +38,11 @@ const Field = ({fieldInfo, type, price, idx, description, callback}) => {
     else
         return (
             <div className='field'>
-                <p>{fieldInfo}</p>
-                <InputField idx={idx} callback={callback} />
+                <div className="field-header">
+                    <p>{fieldInfo}</p>
+                    {step === currentStep && fields.includes(idx) ? <p className='error-msg'>This field is required</p> : null}
+                </div>
+                <InputField currentStep={currentStep} idx={idx} callback={callback} />
             </div>
         )
 }

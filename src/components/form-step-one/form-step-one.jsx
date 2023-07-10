@@ -13,10 +13,10 @@ const FormStepOne = () => {
     const personalInfo = useSelector(getPersonalInfo)
     const dispatch = useDispatch()
     const step = useSelector(getStep)
-    const [ans] = useValidate()
+    const [validate] = useValidate()
 
     const nextFormStep = () => {
-        if(!ans)
+        if(!validate())
             return
         dispatch(setStep(step + 1))
     }
@@ -57,7 +57,7 @@ const FormStepOne = () => {
                 <FormBodyHeader title='Personal Info' subtitle='Please provide your name, email address, and phone number.' />
                 {
                     fields.map((field, idx) => {
-                        return <Field idx={idx} callback={setPersonalInfoCB} fieldInfo={field} />
+                        return <Field currentStep={0} idx={idx} callback={setPersonalInfoCB} fieldInfo={field} />
                     })
                 }
             </div>

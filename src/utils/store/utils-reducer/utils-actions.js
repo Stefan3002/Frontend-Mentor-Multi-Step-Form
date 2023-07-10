@@ -32,3 +32,10 @@ export const setTotalPrice = (price) => {
         payload: price
     }
 }
+
+export const setErrors = (errors) => {
+    return {
+        type: 'SET_ERRORS',
+        payload: errors
+    }
+}

@@ -1,12 +1,13 @@
 import './input-field.css'
 import {useSelector} from "react-redux";
-import {getPersonalInfo} from "../../utils/store/utils-reducer/utils-selectors";
+import {getAddonsInfo, getPersonalInfo} from "../../utils/store/utils-reducer/utils-selectors";
 const InputField = ({type, callback, idx}) => {
     const personalInfo = useSelector(getPersonalInfo)
+    const addonsInfo = useSelector(getAddonsInfo)
     if(type === 'check')
         return (
             <div className='input-field'>
-                <input type="checkbox"/>
+                <input type="checkbox" checked={addonsInfo.addons.includes(idx)}/>
             </div>
         )
     else

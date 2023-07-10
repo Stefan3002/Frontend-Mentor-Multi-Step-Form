@@ -5,9 +5,10 @@ import icon1 from '../../utils/images/icon-arcade.svg'
 import icon2 from '../../utils/images/icon-advanced.svg'
 import icon3 from '../../utils/images/icon-pro.svg'
 import {useSelector} from "react-redux";
-import {getPlansInfo} from "../../utils/store/utils-reducer/utils-selectors";
+import {getAddonsInfo, getPlansInfo} from "../../utils/store/utils-reducer/utils-selectors";
 const Field = ({fieldInfo, type, price, idx, description, callback}) => {
     const selectedPlan = useSelector(getPlansInfo)
+    const selectedAddons = useSelector(getAddonsInfo)
     const {plan} = selectedPlan
     if(type === 'card')
         return (
@@ -21,9 +22,9 @@ const Field = ({fieldInfo, type, price, idx, description, callback}) => {
         )
     else if(type === 'long')
         return (
-            <div className='field field-long'>
+            <div style={{background: selectedAddons.addons.includes(idx) ? '#d6d6e1' : null}} onClick={(event) => callback(event, idx)} className='field field-long'>
                 <div className="field-long-left">
-                    <InputField type='check' />
+                    <InputField type='check' idx={idx} />
                     <div className="field-left-info">
                         <p>{fieldInfo}</p>
                         <p className='sub-info'>{description}</p>

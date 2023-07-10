@@ -7,7 +7,11 @@ const INITIAL_STATE = {
     },
     plansInfo: {
         plan: undefined
-    }
+    },
+    addonsInfo: {
+        addons: []
+    },
+    totalPrice : 0
 }
 
 export const utilsReducer = (state = INITIAL_STATE, action) => {
@@ -27,6 +31,16 @@ export const utilsReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 plansInfo: payload
+            }
+        case 'SET_ADDONS_INFO':
+            return {
+                ...state,
+                addonsInfo: payload
+            }
+        case 'SET_TOTAL_PRICE':
+            return {
+                ...state,
+                totalPrice: payload
             }
         default:
             return {

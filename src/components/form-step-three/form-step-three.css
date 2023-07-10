@@ -1,3 +1,7 @@
-
+.form-step-three .button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 /*# sourceMappingURL=form-step-three.css.map */

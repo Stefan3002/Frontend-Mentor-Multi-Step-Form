@@ -7,12 +7,19 @@ import {useDispatch, useSelector} from "react-redux";
 import {setPersonalInfo, setStep} from "../../utils/store/utils-reducer/utils-actions";
 import {getPersonalInfo, getStep} from "../../utils/store/utils-reducer/utils-selectors";
 import FormBodyHeader from "../form-body-header/form-body-header";
+import {useValidate, useValidateStepOne} from "../../hooks/validateStepOne";
 const FormStepOne = () => {
     const {fields} = fieldsInfo
     const personalInfo = useSelector(getPersonalInfo)
     const dispatch = useDispatch()
     const step = useSelector(getStep)
+    // const {useValidateStepOne} = useValidate()
+
     const nextFormStep = () => {
+
+        // if(!validateStepOne())
+        //     return
+
         dispatch(setStep(step + 1))
     }
 

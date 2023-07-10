@@ -18,3 +18,17 @@ export const setPlansInfo = (info) => {
         payload: info
     }
 }
+
+export const setAddonsInfo = (info) => {
+    return {
+        type: 'SET_ADDONS_INFO',
+        payload: info
+    }
+}
+
+export const setTotalPrice = (price) => {
+    return {
+        type: 'SET_TOTAL_PRICE',
+        payload: price
+    }
+}

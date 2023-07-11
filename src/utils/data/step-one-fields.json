@@ -1,5 +1,8 @@
 {
   "fields":[
     "Name", "Email Address", "Phone Number"
+  ],
+  "placeholders": [
+    "e.g. Stephen King", "e.g. stephenking@lorem.com", "e.g. +1 234 567 890"
   ]
 }

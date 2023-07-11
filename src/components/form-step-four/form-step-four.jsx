@@ -27,7 +27,7 @@ const FormStepFour = () => {
     const {plan} = planInfo
     const {fields, prices} = addonsFields
 
-    const nextFormStep = () => {
+    const endFormFlow = () => {
         dispatch(setStep(step + 1))
     }
     const prevFormStep = () => {
@@ -81,7 +81,7 @@ const FormStepFour = () => {
             </div>
             <div className="button-container">
                 <p onClick={prevFormStep} className='back-button'>Go Back</p>
-                <Button callback={nextFormStep} text='Confirm' />
+                <Button callback={endFormFlow} text='Confirm' />
             </div>
         </div>
     )

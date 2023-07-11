@@ -9,17 +9,20 @@ import {getPersonalInfo, getStep} from "../../utils/store/utils-reducer/utils-se
 import FormBodyHeader from "../form-body-header/form-body-header";
 import useValidate from "../../hooks/validateStepOne";
 const FormStepOne = () => {
-    const {fields} = fieldsInfo
+    const width = window.innerWidth
+    const {fields, placeholders} = fieldsInfo
     const personalInfo = useSelector(getPersonalInfo)
     const dispatch = useDispatch()
-    const step = useSelector(getStep)
     const [validate] = useValidate()
+    const step = useSelector(getStep)
 
     const nextFormStep = () => {
         if(!validate())
             return
         dispatch(setStep(step + 1))
     }
+
+
 
     const setPersonalInfoCB = (event, idx) => {
         const target = event.target.value
@@ -57,13 +60,16 @@ const FormStepOne = () => {
                 <FormBodyHeader title='Personal Info' subtitle='Please provide your name, email address, and phone number.' />
                 {
                     fields.map((field, idx) => {
-                        return <Field currentStep={0} idx={idx} callback={setPersonalInfoCB} fieldInfo={field} />
+                        return <Field placeholder={placeholders[idx]} currentStep={0} idx={idx} callback={setPersonalInfoCB} fieldInfo={field} />
                     })
                 }
             </div>
-            <div className="button-container">
-                <Button callback={nextFormStep} text='Next Step' />
-            </div>
+            {
+                width > 1100 ? <div className="button-container">
+                    <Button callback={nextFormStep} text='Next Step' />
+                </div> : null
+            }
+
         </div>
     )
 }

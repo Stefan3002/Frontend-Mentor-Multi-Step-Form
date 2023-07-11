@@ -6,7 +6,7 @@ import icon2 from '../../utils/images/icon-advanced.svg'
 import icon3 from '../../utils/images/icon-pro.svg'
 import {useSelector} from "react-redux";
 import {getAddonsInfo, getErrors, getPlansInfo} from "../../utils/store/utils-reducer/utils-selectors";
-const Field = ({fieldInfo, type, price, idx, description, callback, currentStep}) => {
+const Field = ({placeholder, fieldInfo, type, price, idx, description, callback, currentStep}) => {
     const selectedPlan = useSelector(getPlansInfo)
     const selectedAddons = useSelector(getAddonsInfo)
     const errors = useSelector(getErrors)
@@ -42,7 +42,7 @@ const Field = ({fieldInfo, type, price, idx, description, callback, currentStep}
                     <p>{fieldInfo}</p>
                     {step === currentStep && fields.includes(idx) ? <p className='error-msg'>This field is required</p> : null}
                 </div>
-                <InputField currentStep={currentStep} idx={idx} callback={callback} />
+                <InputField placeholder={placeholder} currentStep={currentStep} idx={idx} callback={callback} />
             </div>
         )
 }

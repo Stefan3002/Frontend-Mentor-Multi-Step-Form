@@ -1,0 +1,19 @@
+.form-finish {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-finish .finish-img {
+  width: 65px;
+}
+.form-finish .finish-header {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin: 2rem 0 0 0;
+}
+.form-finish .finish-subheader {
+  color: #939496;
+  text-align: center;
+}
+
+/*# sourceMappingURL=form-finish.css.map */

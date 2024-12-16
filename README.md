@@ -13,7 +13,7 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-## Overview
+## Overview 
 
 ### The challenge
 
